@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6789aa48-fc71-43a4-b446-285b6012d1e1" name="Default Changelist" comment="Updated settings.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolMgmt/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolMgmt/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +83,7 @@
       <workItem from="1612183756156" duration="8960000" />
       <workItem from="1612447199830" duration="1808000" />
       <workItem from="1612530588124" duration="32123000" />
-      <workItem from="1612809959307" duration="1740000" />
+      <workItem from="1612809959307" duration="2630000" />
     </task>
     <task id="LOCAL-00001" summary="Updated models.py">
       <created>1612750645291</created>
