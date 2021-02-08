@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7rn7*1b1(*ttihn*n*ul%#u1&x95^zm$3szq**k%phtn0!f4tj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -118,12 +118,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-'''STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFIlES = [os.path.join(BASE_DIR, 'static')]
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images/')
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'''
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = '/home'
 LOGOUT_REDIRECT_URL = '/home'
