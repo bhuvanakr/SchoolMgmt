@@ -16,12 +16,6 @@ class Teacher(models.Model):
     def __str__(self):
         return str(self.teacher_firstname)
 
-    def __str__(self):
-        return str(self.teacher_lastname)
-
-    def __str__(self):
-        return str(self.teaching_grade)
-
 
 class Student(models.Model):
     student_ID = models.CharField(primary_key=True, max_length=10, blank=False, null=False, default=' ')
@@ -32,12 +26,6 @@ class Student(models.Model):
 
     def __str__(self):
         return str(self.student_firstname)
-
-    def __str__(self):
-        return str(self.student_lastname)
-
-    def __str__(self):
-        return str(self.student_grade)
 
 
 class Attendance(models.Model):
