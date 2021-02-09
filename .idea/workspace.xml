@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6789aa48-fc71-43a4-b446-285b6012d1e1" name="Default Changelist" comment="Updated settings.py">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolMgmt/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolMgmt/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="6789aa48-fc71-43a4-b446-285b6012d1e1" name="Default Changelist" comment="Updated settings.py" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +33,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/db.sqlite3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Schools" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -84,7 +81,7 @@
       <workItem from="1612183756156" duration="8960000" />
       <workItem from="1612447199830" duration="1808000" />
       <workItem from="1612530588124" duration="32123000" />
-      <workItem from="1612809959307" duration="4717000" />
+      <workItem from="1612809959307" duration="5512000" />
     </task>
     <task id="LOCAL-00001" summary="Updated models.py">
       <created>1612750645291</created>
