@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Schools',
     'crispy_forms',
+    'django.contrib.admin',
 
 ]
 
@@ -117,8 +118,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'Schools/static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFIlES = [os.path.join(BASE_DIR,   'static')]
 #STATICFILES_DIRS = [os.path.join(BASE_DIR, 'Schools/static')]
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images/')
@@ -128,8 +129,9 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = '/home'
 LOGOUT_REDIRECT_URL = '/home'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'bhuvanadjango@gmail.com'
-EMAIL_HOST_PASSWORD = 'django123#'
+EMAIL_HOST_PASSWORD = 'Django123#'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True

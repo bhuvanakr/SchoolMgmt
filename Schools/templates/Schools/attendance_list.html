@@ -1,0 +1,72 @@
+{% extends 'Schools/base.html' %}
+{% block content %}
+
+<html lang="en">
+    <body>
+
+
+    <style>
+        body {
+            background-color: blue;
+        }
+    </style>
+    <br>
+    <div class="row">
+        <h2 style="padding-left: 15Px">Attendance List</h2>
+    </div>
+    <br>
+    <form  action="" method="post">
+        {% csrf_token %}
+
+    <div>
+        <b>From:&nbsp;</b><input type = 'date' name = 'fromdate'/>
+        <b>To:&nbsp;</b><input type = 'date' name = 'todate'/>
+        <button type="submit" >Search</button>
+    </div>
+    <br>
+    </form>
+    <div>
+        <table class="table table-hover table-responsive-lg text-center">
+            <thead>
+            <tr bgcolor="white">
+                <th>Attendance ID</th>
+                <th>Student </th>
+                <th>Date</th>
+                <th>Status </th>
+                <th colspan="3">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for attendance in attendances %}
+                <tr bgcolor="white">
+                    <td>{{ attendance.attendance_ID }}</td>
+                    <td>{{ attendance.student.student_firstname }} {{ attendance.student.student_lastname }} </td>
+                    <td>{{ attendance.date }}</td>
+                    <td>{{ attendance.status }}</td>
+
+                    <td><a href="{% url 'Schools:attendance_edit' pk=attendance.pk %}"
+                           class="btn btn-warning">Edit</a></td>
+                    <td><a href="{% url 'Schools:attendance_delete' pk=attendance.pk %}"
+                    onclick="return confirm('Are you sure you want to delete?')"
+                    class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <div class="row">
+            <table>
+                <td style="padding-left: 30px;">
+                     <a href="{% url 'Schools:attendance_create' %}" class="row">
+                        <span class="btn btn-primary">Add Attendance</span>
+                     </a>
+                </td>
+            </table>
+
+        </div>
+    </div>
+
+    </body>
+    </html>
+{% endblock %}

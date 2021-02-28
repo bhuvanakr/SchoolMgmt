@@ -1,9 +1,9 @@
-{% extends 'schools/base.html' %}
+{% extends 'Schools/base.html' %}
 
 {% block content %}
     <h1>Delete</h1>
     <form action="" method="post">{% csrf_token %}
-      <p>Are you sure you want to delete "{{ student.student_studentfirstname }}"?</p>
+      <p>Are you sure you want to delete "{{ attendance.student_ID }}"?</p>
       <button class="btn btn-danger ml-2" type="submit">Confirm</button>
     </form>
 {% endblock content %}

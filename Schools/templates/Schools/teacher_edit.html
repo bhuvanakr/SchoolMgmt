@@ -1,4 +1,4 @@
-{% extends 'schools/base.html' %}
+{% extends 'Schools/base.html' %}
 {% load crispy_forms_tags %}
 
 {% block content %}
@@ -6,7 +6,7 @@
 
     <h1>Edit Teacher Details</h1>
        <form action="" method="post">{% csrf_token %}
-        {{ form|crispy }}
+        {{ forms|crispy }}
         <button type="submit" class="save btn btn-primary">Update</button>
     </form>
 

@@ -15,17 +15,17 @@ class TeacherAdmin(admin.ModelAdmin):
 
 class StudentAdmin(admin.ModelAdmin):
     list_display = ['student_ID', 'student_lastname', 'student_firstname', 'student_grade',
-                    'student_teacher_ID']
+                    'teacher']
     list_filter = ['student_ID', 'student_lastname', 'student_firstname', 'student_grade',
-                   'student_teacher_ID']
+                   'teacher']
     search_fields = ['student_ID', 'student_lastname', 'student_firstname', 'student_grade',
-                     'student_teacher_ID']
+                     'teacher']
 
 
 class AttendanceAdmin(admin.ModelAdmin):
-    list_display = ['Attendance_student_ID', 'status', 'date']
-    list_filter = ['Attendance_student_ID', 'status', 'date']
-    search_fields = ['Attendance_student_ID', 'status', 'date']
+    list_display = ['attendance_ID', 'student', 'status', 'date']
+    list_filter = ['attendance_ID', 'student', 'status', 'date']
+    search_fields = ['attendance_ID', 'student', 'status', 'date']
 
 
 admin.site.register(Teacher, TeacherAdmin)

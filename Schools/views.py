@@ -1,6 +1,8 @@
 # from django.contrib.auth import models
 from django.shortcuts import get_object_or_404
 # from .models import Student, Teacher, Attendance
+from django.utils import timezone
+
 from .forms import *
 from django.contrib import messages
 # from django.core.paginator import Paginator
@@ -11,11 +13,12 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.urls import reverse_lazy
+import sys
 
 
 # Create your views here.
 def home(request):
-    return render(request, 'schools/home.html', {'schools': home})
+    return render(request, 'Schools/home.html', {'Schools': home})
 
 
 def logout(request):
@@ -47,124 +50,142 @@ class SignUpView(generic.CreateView):
 
 @login_required
 def teacher_list(request):
-    teacher = Teacher.objects.all()
-    return render(request, "schools/teacher_list.html", {'teachers': 'teacher'})
+    teachers = Teacher.objects.all()
+    return render(request, "Schools/teacher_list.html", {'teachers': teachers})
 
 
 @login_required
-def create_teacher(request):
+def teacher_create(request):
     if request.method == "POST":
-        form = CreateTeacher(request.POST)
-
+        form = TeacherForm(request.POST)
         if form.is_valid():
             teacher = form.save(commit=False)
-            messages.success(request, "Teacher Registration Successfully!")
+            teacher.save()
             teachers = Teacher.objects.all()
-            return render(request, 'schools/teacher_list.html',
-                          {'teachers': teacher})
+            return render(request, 'Schools/teacher_list.html',
+                          {'teachers': teachers})
     else:
-        form = CreateTeacher()
-
-    return render(request, "schools/teacher_create.html", {'form': 'form'})
+        form = TeacherForm()
+    return render(request, "Schools/teacher_create.html", {'form': form})
 
 
 @login_required
-def edit_teacher(request, pk):
-    teacher = get_object_or_404(Teacher, teacher_ID=pk)
+def teacher_edit(request, pk):
+    teacher = get_object_or_404(Teacher, pk=pk)
 
     if request.method == "POST":
-        form = CreateTeacher(request.POST, instance=teacher)
-
+        form = TeacherForm(request.POST, instance=teacher)
         if form.is_valid():
-            teacher = form.save()
-            messages.success(request, "Edit Teacher Info Successfully!")
+            teacher = form.save(commit=False)
+            teacher.save()
             teachers = Teacher.objects.all()
-            return render(request, 'schools/teacher_edit.html', {'teachers': teachers})
+            return render(request, 'Schools/teacher_list.html', {'teachers': teachers})
 
     else:
-        form = CreateTeacher(instance=teacher)
-        return render(request, "schools/teacher_edit.html", {'teachers': teacher})
+        form = TeacherForm(instance=teacher)
+        return render(request, "Schools/teacher_edit.html", {'forms': form})
 
 
 @login_required
-def delete_teacher(request, teacher_id):
-    teacher_delete = get_object_or_404(Teacher, id=teacher_id)
-    teacher_delete.delete()
-    messages.success(request, "Delete Teacher Info Successfully")
-    return redirect('schools:teacher_list')
+def teacher_delete(request, pk):
+    teacher = get_object_or_404(Teacher, pk=pk)
+    teacher.delete()
+    return redirect('Schools:teacher_list')
 
 
 @login_required
 def student_list(request):
     students = Student.objects.all()
-    return render(request, "schools/student_list.html", {'students': 'student'})
+    return render(request, "Schools/student_list.html", {'students': students})
 
 
 @login_required
-def create_student(request):
+def student_create(request):
     if request.method == "POST":
-        form = CreateStudent(request.POST)
+        form = StudentForm(request.POST)
 
         if form.is_valid():
             student = form.save(commit=False)
             student.save()
-            messages.success(request, "Student Registration Successfully!")
             students = Student.objects.all()
-            return render(request, 'schools/student_list.html',
+            return render(request, 'Schools/student_list.html',
                           {'students': students})
     else:
-        form = CreateStudent()
-        return render(request, "schools/student_create.html", {'forms': 'form'})
+        form = StudentForm()
+
+    return render(request, "Schools/student_create.html", {'forms': form})
 
 
 @login_required
-def edit_student(request, pk):
-    student = get_object_or_404(Student, id=pk)
+def student_edit(request, pk):
+    student = get_object_or_404(Student, pk=pk)
     if request.method == "POST":
-        form = CreateStudent(request.POST, instance=student)
+        form = StudentForm(request.POST, instance=student)
 
         if form.is_valid():
-            student = form.save()
+            student = form.save(commit=False)
             student.save()
-            messages.success(request, "Edit Student Info Successfully!")
             students = Student.objects.all()
-            return render(request, 'schools/student_list.html', {'students': students})
+            return render(request, 'Schools/student_list.html', {'students': students})
     else:
-        form = CreateStudent(instance=student)
-    return render(request, "schools/student_edit.html", {'form': 'form'})
+        form = StudentForm(instance=student)
+    return render(request, "Schools/student_edit.html", {'form': form})
 
 
 @login_required
-def delete_student(request, student_id):
-    student_delete = get_object_or_404(Student, id=student_id)
-    student_delete.delete()
-    messages.success(request, "Delete Student Info Successfully")
-    return redirect("schools:student_list")
+def student_delete(request, pk):
+    student = get_object_or_404(Student, pk=pk)
+    student.delete()
+    return redirect("Schools:student_list")
 
 
-'''def attendance_count(request):
-    grade = request.GET.get("grade", None)
-    if grade:
-        students = Student.objects.filter(Student, grade=student_grade)
-        context = {"student_list": student_list}
+@login_required
+def attendance_list(request):
+    if request.method == "POST":
+        fromdate = request.POST.get('fromdate')
+        todate = request.POST.get('todate')
+        searchresult = Attendance.objects.filter(date__range=[fromdate, todate])
+        return render(request, "Schools/attendance_list.html", {'attendances': searchresult})
     else:
-        context = {}
-    return render(request, "schools/attendance_count.html", context)'''
+        attendances = Attendance.objects.all()
+        return render(request, "Schools/attendance_list.html", {'attendances': attendances})
 
-'''class AttendanceManager(models.Model):
-    def create_attendance(self, student_grade, student_id):
-        student_obj = Student.objects.get(
-            class_type__class_short_form=student_grade,
-            admission_id=student_id
-        )
-        attendance_obj = Attendance.objects.create(student=student_obj, status=1)
-        return attendance_obj'''
 
-'''class Attendance(models.Model):
-    objects = AttendanceManager()
+@login_required
+def attendance_create(request):
+    if request.method == "POST":
+        form = AttendanceForm(request.POST)
 
-    class Meta:
-        unique_together = ['student', 'date']
+        if form.is_valid():
+            attendance = form.save(commit=False)
+            attendance.save()
+            attendances = Attendance.objects.all()
+            return render(request, 'Schools/attendance_list.html',
+                          {'attendances': attendances})
+    else:
+        form = AttendanceForm()
 
-    def __str__(self):
-        return self.student.admission_id'''
+    return render(request, "Schools/attendance_create.html", {'forms': form})
+
+
+@login_required
+def attendance_edit(request, pk):
+    attendance = get_object_or_404(Attendance, pk=pk)
+    if request.method == "POST":
+        form = AttendanceForm(request.POST, instance=attendance)
+
+        if form.is_valid():
+            attendance = form.save(commit=False)
+            attendance.save()
+            attendances = Attendance.objects.all()
+            return render(request, 'Schools/attendance_list.html', {'attendances': attendances})
+    else:
+        form = AttendanceForm(instance=attendance)
+    return render(request, "Schools/attendance_edit.html", {'form': form})
+
+
+@login_required
+def attendance_delete(request, pk):
+    attendance = get_object_or_404(Attendance, pk=pk)
+    attendance.delete()
+    return redirect("Schools:attendance_list")

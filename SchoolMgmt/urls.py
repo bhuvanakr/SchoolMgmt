@@ -17,10 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-
+app_name = 'Schools'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Schools.urls')),
+    # path('', include(('Schools.urls', 'Schools'), namespace='Schools')),
     path('', include('django.contrib.auth.urls')),
 ]

@@ -1,4 +1,4 @@
-{% extends 'schools/base.html' %}
+{% extends 'Schools/base.html' %}
 {% block content %}
 
 <html lang="en">
@@ -20,6 +20,7 @@
         <table class="table table-hover table-responsive-lg text-center">
             <thead>
             <tr bgcolor="white">
+                <th>Student ID</th>
                 <th>Student LastName</th>
                 <th>Student Firstname</th>
                 <th>Student Grade</th>
@@ -29,12 +30,13 @@
             <tbody>
             {% for student in students %}
                 <tr bgcolor="white">
+                    <td>{{ student.student_ID }}</td>
                     <td>{{ student.student_lastname }}</td>
                     <td>{{ student.student_firstname }}</td>
                     <td>{{ student.student_grade }}</td>
-                    <td><a href="{% url 'schools:student_edit' pk=student.pk %}"
+                    <td><a href="{% url 'Schools:student_edit' pk=student.pk %}"
                            class="btn btn-warning">Edit</a></td>
-                    <td><a href="{% url 'schools:student_delete' pk=student.pk %}"
+                    <td><a href="{% url 'Schools:student_delete' pk=student.pk %}"
                     onclick="return confirm('Are you sure you want to delete?')"
                     class="btn btn-danger">Delete</a>
                     </td>
@@ -44,7 +46,7 @@
         </table>
 
      <div class="row">
-            <a href="{% url 'schools:student_create' %}" class="row"><span
+            <a href="{% url 'Schools:student_create' %}" class="row"><span
                     class="btn btn-primary">Add Student</span></a>
         </div>
     </div>
