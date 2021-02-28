@@ -2,59 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6789aa48-fc71-43a4-b446-285b6012d1e1" name="Default Changelist" comment="Updated settings.py">
-      <change afterPath="$PROJECT_DIR$/Schools/migrations/0002_auto_20210227_1254.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Schools/migrations/0003_auto_20210227_1903.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Schools/static/images/attendance.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Schools/templates/Schools/attendance_create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Schools/templates/Schools/attendance_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Schools/templates/Schools/attendance_edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Schools/templates/Schools/attendance_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Schools/templates/registration/password_reset.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Schools/templates/registration/password_reset_complete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Schools/templates/registration/password_reset_confirmation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Schools/templates/registration/password_reset_done.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Schools/templates/registration/password_reset_email.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolMgmt/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolMgmt/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolMgmt/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolMgmt/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/migrations/0002_auto_20210201_0659.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/migrations/0003_auto_20210207_0754.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/static/css/SchoolTemplate.css" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/static/css/Schools.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/templates/registration/password-change-success.html" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/templates/registration/password-change-success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/templates/registration/password-change.html" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/templates/registration/password-change.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/templates/registration/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/templates/registration/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/templates/schools/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/templates/Schools/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/templates/schools/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/templates/Schools/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/templates/schools/student_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/templates/Schools/student_create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/templates/schools/student_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/templates/Schools/student_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/templates/schools/student_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/templates/Schools/student_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/templates/schools/student_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/templates/Schools/student_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/templates/schools/teacher_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/templates/Schools/teacher_create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/templates/schools/teacher_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/templates/Schools/teacher_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/templates/schools/teacher_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/templates/Schools/teacher_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/templates/schools/teacher_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/templates/Schools/teacher_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schools/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Schools/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/password-change-success.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/password-change.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/signup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/schools/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/schools/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/schools/student_create.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/schools/student_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/schools/student_edit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/schools/student_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/schools/teacher_create.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/schools/teacher_delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/schools/teacher_edit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/schools/teacher_list.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +34,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -165,7 +115,8 @@
       <workItem from="1613869207837" duration="1301000" />
       <workItem from="1614475360143" duration="1784000" />
       <workItem from="1614477177111" duration="1780000" />
-      <workItem from="1614478992849" duration="673000" />
+      <workItem from="1614478992849" duration="1426000" />
+      <workItem from="1614480878020" duration="452000" />
     </task>
     <task id="LOCAL-00001" summary="Updated models.py">
       <created>1612750645291</created>
